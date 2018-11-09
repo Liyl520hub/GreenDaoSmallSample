@@ -97,10 +97,8 @@ public class DBController {
 
     /**
      * 会自动判定是插入还是替换
-     *
-     *
      */
-    public void insertOrReplace(String urlName,String jsonData) {
+    public void insertOrReplace(String urlName, String jsonData) {
         DataCache dataCache = new DataCache();
         dataCache.setCacheUrl(urlName);
         dataCache.setCacheConent(jsonData);
