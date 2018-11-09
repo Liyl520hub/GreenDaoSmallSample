@@ -98,9 +98,14 @@ public class DBController {
     /**
      * 会自动判定是插入还是替换
      *
-     * @param dataCache
+     *
      */
-    public void insertOrReplace(DataCache dataCache) {
+    public void insertOrReplace(String urlName,String jsonData) {
+        DataCache dataCache = new DataCache();
+        dataCache.setCacheUrl(urlName);
+        dataCache.setCacheConent(jsonData);
+        long time = System.currentTimeMillis();
+        dataCache.setCacheTime(time);
         dataCacheDao.insertOrReplace(dataCache);
     }
 
@@ -132,16 +137,16 @@ public class DBController {
      * 按条件查询数据
      */
     public DataCache searchByWhere(String urlName) {
-        List<DataCache> personInfors = (List<DataCache>) dataCacheDao.queryBuilder().where(DataCacheDao.Properties.CacheUrl.eq(urlName)).build().unique();
-        return personInfors.get(0);
+        List<DataCache> dataCaches = (List<DataCache>) dataCacheDao.queryBuilder().where(DataCacheDao.Properties.CacheUrl.eq(urlName)).build().unique();
+        return dataCaches.get(0);
     }
 
     /**
      * 查询所有数据
      */
     public List<DataCache> searchAll() {
-        List<DataCache> personInfors = dataCacheDao.queryBuilder().list();
-        return personInfors;
+        List<DataCache> dataCaches = dataCacheDao.queryBuilder().list();
+        return dataCaches;
     }
 
     /**

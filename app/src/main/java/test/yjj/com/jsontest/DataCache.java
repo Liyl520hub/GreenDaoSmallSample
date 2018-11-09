@@ -34,11 +34,11 @@ public class DataCache {
     /**
      * 缓存的时间
      */
-    private String cacheTime;
+    private long cacheTime;
 
     @Generated(hash = 488346778)
     public DataCache(Long id, String cacheUrl, String cacheConent,
-                     String cacheTime) {
+                     long cacheTime) {
         this.id = id;
         this.cacheUrl = cacheUrl;
         this.cacheConent = cacheConent;
@@ -73,11 +73,11 @@ public class DataCache {
         this.cacheConent = cacheConent;
     }
 
-    public String getCacheTime() {
+    public long getCacheTime() {
         return this.cacheTime;
     }
 
-    public void setCacheTime(String cacheTime) {
+    public void setCacheTime(long cacheTime) {
         this.cacheTime = cacheTime;
     }
 }
