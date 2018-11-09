@@ -137,8 +137,8 @@ public class DBController {
      * 按条件查询数据
      */
     public DataCache searchByWhere(String urlName) {
-        List<DataCache> dataCaches = (List<DataCache>) dataCacheDao.queryBuilder().where(DataCacheDao.Properties.CacheUrl.eq(urlName)).build().unique();
-        return dataCaches.get(0);
+        DataCache dataCache = (DataCache) dataCacheDao.queryBuilder().where(DataCacheDao.Properties.CacheUrl.eq(urlName)).build().unique();
+        return dataCache;
     }
 
     /**
