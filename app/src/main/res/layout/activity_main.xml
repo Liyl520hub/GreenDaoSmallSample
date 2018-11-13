@@ -9,15 +9,15 @@
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableLoadMore="true"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlPrimaryColor="@android:color/darker_gray">
 
         <com.scwang.smartrefresh.header.WaveSwipeHeader
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srlAccentColor="@android:color/white"
-            app:srlEnableLoadMore="false"
-            app:srlHeaderMaxDragRate="2.5"
-            app:srlPrimaryColor="@android:color/darker_gray" />
+            android:layout_height="match_parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
